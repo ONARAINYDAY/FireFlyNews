@@ -19,7 +19,7 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainVie
     private final static int CONTAINER = R.id.fragments_frame_container;
     private ExitAppHelper exitAppHelper;
     private SparseArray<Fragment> naviMapFragment = new SparseArray<>();
-
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
