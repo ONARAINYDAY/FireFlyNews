@@ -1,4 +1,4 @@
-package com.zjk.fireflynews.base;
+package com.zjk.fireflynews.module.base.presenter;
 
 /**
  * Created by FireFly on 2016/9/6.

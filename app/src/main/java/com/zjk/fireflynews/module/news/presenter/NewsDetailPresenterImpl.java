@@ -1,7 +1,6 @@
 package com.zjk.fireflynews.module.news.presenter;
 
-import com.zjk.fireflynews.base.BasePresenterImpl;
-import com.zjk.fireflynews.callback.RequestCallback;
+import com.zjk.fireflynews.module.base.presenter.BasePresenterImpl;
 import com.zjk.fireflynews.data.NewsData;
 import com.zjk.fireflynews.data.NewsListData;
 import com.zjk.fireflynews.data.newenum.InitDataType;
@@ -49,7 +48,7 @@ public class NewsDetailPresenterImpl extends BasePresenterImpl<NewsDetailView, L
     }
 
     @Override
-    public void refreshData() {
+    public void onRefreshData() {
         isRefresh = true;
         mStartPage = 0;
         mSubscription = newsDetailInteractor.asyncData(this, newsData, mStartPage);

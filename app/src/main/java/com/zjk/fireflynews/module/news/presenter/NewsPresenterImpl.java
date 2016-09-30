@@ -1,6 +1,6 @@
 package com.zjk.fireflynews.module.news.presenter;
 
-import com.zjk.fireflynews.base.BasePresenterImpl;
+import com.zjk.fireflynews.module.base.presenter.BasePresenterImpl;
 import com.zjk.fireflynews.data.NewsData;
 import com.zjk.fireflynews.module.news.model.NewsInteractorImpl;
 import com.zjk.fireflynews.module.news.view.NewsView;

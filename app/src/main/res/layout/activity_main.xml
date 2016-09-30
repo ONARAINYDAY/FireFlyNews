@@ -15,16 +15,19 @@
         android:padding="4dp">
 
         <TextView
+            android:id="@+id/firefly_news"
             style="@style/main_tab_style"
             android:drawableTop="@mipmap/ic_news_black"
             android:text="@string/str_news" />
 
         <TextView
+            android:id="@+id/firefly_photo"
             style="@style/main_tab_style"
             android:drawableTop="@mipmap/ic_photo_black"
             android:text="@string/str_photo" />
 
         <TextView
+            android:id="@+id/firefly_video"
             style="@style/main_tab_style"
             android:drawableTop="@mipmap/ic_video_black"
             android:text="@string/str_video"/>

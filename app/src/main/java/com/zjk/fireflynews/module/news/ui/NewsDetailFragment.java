@@ -17,6 +17,7 @@ import com.zjk.fireflynews.data.NewsData;
 import com.zjk.fireflynews.data.NewsListData;
 import com.zjk.fireflynews.data.newenum.InitDataType;
 import com.zjk.fireflynews.module.adapter.NewsListAdapter;
+import com.zjk.fireflynews.module.base.ui.BaseListFragment;
 import com.zjk.fireflynews.module.news.presenter.NewsDetailPresenter;
 import com.zjk.fireflynews.module.news.presenter.NewsDetailPresenterImpl;
 import com.zjk.fireflynews.module.news.view.NewsDetailView;
@@ -24,21 +25,14 @@ import com.zjk.fireflynews.utils.MeasureUtil;
 
 import java.util.List;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-
 /**
  * Created by FireFly on 2016/9/8.
  */
-public class NewsDetailFragment extends BaseFragment<NewsDetailPresenter> implements NewsDetailView, SwipeRefreshLayout.OnRefreshListener {
+public class NewsDetailFragment extends BaseListFragment<NewsDetailPresenter> implements NewsDetailView/*SwipeRefreshLayout.OnRefreshListener*/ {
 
     private static String EXTRA_KEY_NEWS_DETAIL = "extra_key_news_detail";
     private NewsData newsData;
     private NewsListAdapter adapter;
-    @BindView(R.id.recycler_view)
-    RecyclerView mRecyclerView;
-    @BindView(R.id.swipe_refresh_layout)
-    SwipeRefreshLayout mSwipeRefreshLayout;
 
     public static NewsDetailFragment getInstance(NewsData newsData) {
         NewsDetailFragment newsDetailFragment = new NewsDetailFragment();
@@ -54,25 +48,19 @@ public class NewsDetailFragment extends BaseFragment<NewsDetailPresenter> implem
         newsData = bundle.getParcelable(EXTRA_KEY_NEWS_DETAIL);
     }
 
-    @Override
+    /*@Override
     protected View onCreateViewInit(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_news_detail_layout, container, false);
         unbinder = ButterKnife.bind(this, view);
-        initView();
         mPresenter = new NewsDetailPresenterImpl(this, newsData);
         mPresenter.refreshData();
         return view;
-    }
-
-    private void initView() {
-        mSwipeRefreshLayout.setOnRefreshListener(this);
-        mSwipeRefreshLayout.setColorSchemeResources(android.R.color.holo_blue_bright, android.R.color.holo_green_light,
-                android.R.color.holo_orange_light, android.R.color.holo_red_light);
-    }
+    }*/
 
     @Override
-    public void onRefresh() {
-        mPresenter.refreshData();
+    public void initView(View view) {
+        mPresenter = new NewsDetailPresenterImpl(this, newsData);
+        mPresenter.onRefreshData();
     }
 
     @Override
@@ -117,5 +105,4 @@ public class NewsDetailFragment extends BaseFragment<NewsDetailPresenter> implem
 
         mRecyclerView.setAdapter(adapter);
     }
-
 }

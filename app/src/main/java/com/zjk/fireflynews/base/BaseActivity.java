@@ -5,16 +5,13 @@ import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.support.annotation.LayoutRes;
 import android.support.design.widget.Snackbar;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.zjk.fireflynews.R;
-import com.zjk.fireflynews.utils.MeasureUtil;
+import com.zjk.fireflynews.module.base.presenter.BasePresenter;
+import com.zjk.fireflynews.module.base.view.BaseView;
 import com.zjk.fireflynews.utils.ThemeUtil;
 import com.zjk.fireflynews.utils.ViewUtil;
 

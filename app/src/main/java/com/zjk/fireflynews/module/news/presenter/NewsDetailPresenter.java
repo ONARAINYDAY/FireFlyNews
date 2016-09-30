@@ -1,19 +1,10 @@
 package com.zjk.fireflynews.module.news.presenter;
 
-import com.zjk.fireflynews.base.BasePresenter;
+import com.zjk.fireflynews.module.base.presenter.BaseListPresenter;
 
 /**
  * Created by FireFly on 2016/9/8.
  */
-public interface NewsDetailPresenter extends BasePresenter {
-    /**
-     * 刷新数据
-     */
-    void refreshData();
-
-    /**
-     * 加载更多
-     */
-    void loadMoreData();
+public interface NewsDetailPresenter extends BaseListPresenter {
 
 }

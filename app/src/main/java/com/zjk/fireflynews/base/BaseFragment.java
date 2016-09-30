@@ -9,7 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.zjk.fireflynews.app.App;
-import com.zjk.fireflynews.utils.LogUtil;
+import com.zjk.fireflynews.module.base.presenter.BasePresenter;
+import com.zjk.fireflynews.module.base.view.BaseView;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;

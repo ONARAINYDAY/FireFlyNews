@@ -1,5 +1,6 @@
-package com.zjk.fireflynews.base;
+package com.zjk.fireflynews.module.base.presenter;
 
+import com.zjk.fireflynews.module.base.view.BaseView;
 import com.zjk.fireflynews.callback.RequestCallback;
 
 import rx.Subscription;
