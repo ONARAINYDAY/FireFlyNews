@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.zjk.fireflynews.MainActivity">
+
+    <LinearLayout
+        android:id="@+id/main_navigation_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="?attr/backgroundColor"
+        android:orientation="horizontal"
+        android:padding="4dp">
+
+        <TextView
+            style="@style/main_tab_style"
+            android:drawableTop="@mipmap/ic_news_black"
+            android:text="@string/str_news" />
+
+        <TextView
+            style="@style/main_tab_style"
+            android:drawableTop="@mipmap/ic_photo_black"
+            android:text="@string/str_photo" />
+
+        <TextView
+            style="@style/main_tab_style"
+            android:drawableTop="@mipmap/ic_video_black"
+            android:text="@string/str_video"/>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/main_line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_above="@id/main_navigation_container" />
+    <FrameLayout
+        android:id="@+id/fragments_frame_container"
+        android:background="?attr/backgroundColor"
+        android:layout_above="@id/main_line"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</RelativeLayout>

@@ -1,0 +1,33 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="android:windowNoTitle">true</item>
+        <!--这是App的主要颜色，用于工具栏背景-->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <!--这是App深色调的基本颜色，主要用于通知栏背景-->
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <!--强调色-->
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <!-- 自定义颜色 -->
+        <item name="backgroundColor">@color/backgroundColor</item>
+    </style>
+
+    <style name="AppTheme.LauncherAppTheme">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowBackground">@mipmap/ic_launcher_bg</item>
+    </style>
+
+    <!-- 底部tab表签 -->
+    <style name="main_tab_style">
+        <item name="android:layout_width">0dip</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:drawablePadding">@dimen/border_space_half</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/txt_size_small</item>
+    </style>
+    
+</resources>

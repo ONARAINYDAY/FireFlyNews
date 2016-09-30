@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">FireFlyNews</string>
+    <string name="str_news">新闻</string>
+    <string name="str_photo">图片</string>
+    <string name="str_video">视频</string>
+    <string name="str_exit_msg">再按一次返回键退出！</string>
+
+    <string-array name="news_name">
+        <item>头条</item>
+        <item>娱乐</item>
+        <item>笑话</item>
+        <item>军事</item>
+    </string-array>
+
+    <string-array name="news_id">
+        <item>T1348647909107</item>
+        <item>T1348648517839</item>
+        <item>T1350383429665</item>
+        <item>T1348648141035</item>
+    </string-array>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
