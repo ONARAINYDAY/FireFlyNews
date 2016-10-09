@@ -6,6 +6,8 @@ package com.zjk.fireflynews.module.base.view;
  */
 public interface BaseView {
     void toast(String msg);
+
     void showProgress();
+
     void hideProgress();
 }

@@ -27,10 +27,10 @@ public class NewsListAdapter extends BaseRecyclerViewAdapter<NewsListData> {
 
     @Override
     public void bindItemViewData(BaseRecyclerViewHolder holder, int position, NewsListData itemData) {
-        Glide.with(mContext).load(itemData.imgsrc).asBitmap().diskCacheStrategy(DiskCacheStrategy.RESULT)
+        Glide.with(mContext).load(itemData.getImgsrc()).asBitmap().diskCacheStrategy(DiskCacheStrategy.RESULT)
                 .placeholder(R.drawable.ic_loading).error(R.drawable.ic_fail).into(holder.getImageView(R.id.iv_news_summary_photo));
-        holder.setText(R.id.tv_news_summary_title,itemData.title);
-        holder.setText(R.id.tv_news_summary_digest,itemData.digest);
-        holder.setText(R.id.tv_news_summary_ptime,itemData.ptime);
+        holder.setText(R.id.tv_news_summary_title,itemData.getTitle());
+        holder.setText(R.id.tv_news_summary_digest,itemData.getDigest());
+        holder.setText(R.id.tv_news_summary_ptime,itemData.getPtime());
     }
 }

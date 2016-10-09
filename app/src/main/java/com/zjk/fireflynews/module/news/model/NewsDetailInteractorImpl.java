@@ -33,7 +33,7 @@ public class NewsDetailInteractorImpl implements NewsDetailInteractor<List<NewsL
                 }).toSortedList(new Func2<NewsListData, NewsListData, Integer>() {
                     @Override
                     public Integer call(NewsListData newsListData, NewsListData newsListData2) {
-                        return newsListData2.ptime.compareTo(newsListData.ptime);
+                        return newsListData2.getPtime().compareTo(newsListData.getPtime());
                     }
                 }).subscribe(new ResultSubscriber<List<NewsListData>>(requestCallback));
     }

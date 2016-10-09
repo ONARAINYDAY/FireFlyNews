@@ -5,6 +5,7 @@ import android.util.SparseArray;
 
 import com.zjk.fireflynews.app.App;
 import com.zjk.fireflynews.data.NewsListData;
+import com.zjk.fireflynews.data.VideoListData;
 import com.zjk.fireflynews.http.RestApi.Api;
 import com.zjk.fireflynews.http.RestApi.HostType;
 import com.zjk.fireflynews.http.RestApi.RequestApi;
@@ -32,7 +33,7 @@ import okio.Buffer;
 import okio.BufferedSource;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
-import retrofit2.converter.jackson.JacksonConverterFactory;
+import retrofit2.converter.gson.GsonConverterFactory;
 import rx.Observable;
 
 /**
@@ -62,8 +63,8 @@ public class RetrofitManager {
             log("请求网址: " + request.url());
 
             if (!NetUtil.isConnected(App.getInstance())) {
-                request = request.newBuilder().cacheControl(CacheControl.FORCE_CACHE).build();
                 log("没有网络");
+                request = request.newBuilder().cacheControl(CacheControl.FORCE_CACHE).build();
             }
             Response originalResponse = chain.proceed(request);
 
@@ -147,7 +148,7 @@ public class RetrofitManager {
     }
 
     private RetrofitManager(@HostType.HostTypeChecker int hostType) {
-        Retrofit retrofit = new Retrofit.Builder().baseUrl(Api.getHost(hostType)).client(getOkHttpClient()).addConverterFactory(JacksonConverterFactory.create())
+        Retrofit retrofit = new Retrofit.Builder().baseUrl(Api.getHost(hostType)).client(getOkHttpClient()).addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create()).build();
 
         mRequestApi = retrofit.create(RequestApi.class);
@@ -181,6 +182,17 @@ public class RetrofitManager {
      */
     public Observable<Map<String, List<NewsListData>>> getNewsListObservable(String type, String id, int startPage) {
         return mRequestApi.getNewList(getCacheControl(), type, id, startPage).compose(new SchedulerTransformer<Map<String, List<NewsListData>>>());
+    }
+
+    /**
+     * 网易视频列表 例子：http://c.m.163.com/nc/video/list/V9LG4B3A0/n/0-10.html
+     *
+     * @param id        视频类别id
+     * @param startPage 开始的页码
+     * @return 被观察者
+     */
+    public Observable<Map<String, List<VideoListData>>> getVideoListObservable(String id, int startPage) {
+        return mRequestApi.getVideoList(getCacheControl(), id, startPage).compose(new SchedulerTransformer<Map<String, List<VideoListData>>>());
     }
 
 }

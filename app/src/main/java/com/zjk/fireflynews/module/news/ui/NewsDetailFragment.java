@@ -1,38 +1,29 @@
 package com.zjk.fireflynews.module.news.ui;
 
 import android.os.Bundle;
-import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 
-import com.zjk.fireflynews.R;
-import com.zjk.fireflynews.base.BaseFragment;
-import com.zjk.fireflynews.base.BaseSpaceItemDecoration;
-import com.zjk.fireflynews.callback.OnLoadMoreListener;
+import com.zjk.fireflynews.base.BaseRecyclerViewAdapter;
 import com.zjk.fireflynews.data.NewsData;
 import com.zjk.fireflynews.data.NewsListData;
-import com.zjk.fireflynews.data.newenum.InitDataType;
 import com.zjk.fireflynews.module.adapter.NewsListAdapter;
 import com.zjk.fireflynews.module.base.ui.BaseListFragment;
 import com.zjk.fireflynews.module.news.presenter.NewsDetailPresenter;
 import com.zjk.fireflynews.module.news.presenter.NewsDetailPresenterImpl;
 import com.zjk.fireflynews.module.news.view.NewsDetailView;
-import com.zjk.fireflynews.utils.MeasureUtil;
 
-import java.util.List;
+import java.util.ArrayList;
 
 /**
  * Created by FireFly on 2016/9/8.
  */
-public class NewsDetailFragment extends BaseListFragment<NewsDetailPresenter> implements NewsDetailView/*SwipeRefreshLayout.OnRefreshListener*/ {
+public class NewsDetailFragment extends BaseListFragment<NewsDetailPresenter,NewsListData> implements NewsDetailView/*SwipeRefreshLayout.OnRefreshListener*/ {
 
     private static String EXTRA_KEY_NEWS_DETAIL = "extra_key_news_detail";
     private NewsData newsData;
-    private NewsListAdapter adapter;
+//    private NewsListAdapter adapter;
 
     public static NewsDetailFragment getInstance(NewsData newsData) {
         NewsDetailFragment newsDetailFragment = new NewsDetailFragment();
@@ -64,27 +55,42 @@ public class NewsDetailFragment extends BaseListFragment<NewsDetailPresenter> im
     }
 
     @Override
+    public BaseRecyclerViewAdapter<NewsListData> getAdapter() {
+        return new NewsListAdapter(getActivity(), new ArrayList<NewsListData>());
+    }
+
+    @Override
+    public RecyclerView.LayoutManager getLayoutManager() {
+        return new LinearLayoutManager(getActivity());
+    }
+/*
+    @Override
     public void updateRecycleView(List<NewsListData> newsListDataList, String msg, @InitDataType.InitDataTypeChecker int type) {
         mSwipeRefreshLayout.setRefreshing(false);
         if (null == adapter) {
-            initNewsList(newsListDataList);
-        } else {
-            switch (type) {
-                case InitDataType.TYPE_REFRESH_SUCCESS:
-                    adapter.update(newsListDataList);
-                    break;
-                case InitDataType.TYPE_LOAD_MORE_SUCCESS:
-//                    adapter.setShowFooter(false);
-                    adapter.onLoadMoreSuccess();
-                    adapter.addTail(newsListDataList);
-                    break;
-                case InitDataType.TYPE_REFRESH_FAIL:
-                    break;
-                case InitDataType.TYPE_LOAD_MORE_FAIL:
-                    adapter.onLoadMoreFail(msg);
-                    break;
-            }
+            initNewsList(new ArrayList<NewsListData>());
         }
+        adapter.onShowEmptyView(false, msg);
+        switch (type) {
+            case InitDataType.TYPE_REFRESH_SUCCESS:
+                adapter.update(newsListDataList);
+                break;
+            case InitDataType.TYPE_LOAD_MORE_SUCCESS:
+//                    adapter.setShowFooter(false);
+                adapter.onLoadMoreSuccess();
+                adapter.addTail(newsListDataList);
+                break;
+            case InitDataType.TYPE_REFRESH_FAIL:
+                if (adapter.getItemCount() == 0) {
+                    //显示空布局
+                    adapter.onShowEmptyView(true, msg);
+                }
+                break;
+            case InitDataType.TYPE_LOAD_MORE_FAIL:
+                adapter.onLoadMoreFail(msg);
+                break;
+        }
+
     }
 
     private void initNewsList(List<NewsListData> newsListDataList) {
@@ -105,4 +111,5 @@ public class NewsDetailFragment extends BaseListFragment<NewsDetailPresenter> im
 
         mRecyclerView.setAdapter(adapter);
     }
+*/
 }

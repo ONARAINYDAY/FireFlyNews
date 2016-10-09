@@ -6,7 +6,6 @@ import android.support.v4.app.Fragment;
 import com.zjk.fireflynews.base.BaseTabFragment;
 import com.zjk.fireflynews.base.BaseTabPagerAdapter;
 import com.zjk.fireflynews.data.NewsData;
-import com.zjk.fireflynews.module.news.view.NewsView;
 import com.zjk.fireflynews.module.video.presenter.VideoPresenter;
 import com.zjk.fireflynews.module.video.presenter.VideoPresenterImpl;
 import com.zjk.fireflynews.module.video.view.VideoView;
