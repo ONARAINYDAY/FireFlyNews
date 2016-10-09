@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.zjk.fireflynews.R;
+import com.zjk.fireflynews.callback.OnItemClickListener;
 import com.zjk.fireflynews.callback.OnLoadMoreListener;
 
 import java.util.ArrayList;
@@ -24,7 +25,6 @@ public abstract class BaseRecyclerViewAdapter<T> extends RecyclerView.Adapter<Ba
     protected static final int TYPE_EMPTY = TYPE_DEFAULT + 1;
     protected static final int TYPE_LOAD_MORE_SUCCESS = TYPE_EMPTY + 1;
     protected static final int TYPE_LOAD_MORE_FAIL = TYPE_LOAD_MORE_SUCCESS + 1;
-
 
     private String mRetryHintMsg;
     private String mEmptyHintMsg;
@@ -79,7 +79,19 @@ public abstract class BaseRecyclerViewAdapter<T> extends RecyclerView.Adapter<Ba
         } else {
             holder = new BaseRecyclerViewHolder(mContext, mInflater.inflate(bindItemViewLayout(0), parent, false));
         }
+
+        holder.setOnItemClickListener(onItemClickListener);
         return holder;
+    }
+
+    public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
+        this.onItemClickListener = onItemClickListener;
+    }
+
+    private OnItemClickListener onItemClickListener;
+
+    public List<T> getAdapterData() {
+        return mData;
     }
 
     @Override

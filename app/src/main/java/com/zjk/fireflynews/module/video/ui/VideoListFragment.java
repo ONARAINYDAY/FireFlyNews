@@ -6,6 +6,7 @@ import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.View;
 
 import com.zjk.fireflynews.base.BaseRecyclerViewAdapter;
+import com.zjk.fireflynews.data.C;
 import com.zjk.fireflynews.data.NewsData;
 import com.zjk.fireflynews.data.VideoListData;
 import com.zjk.fireflynews.module.adapter.VideoListAdapter;
@@ -13,8 +14,10 @@ import com.zjk.fireflynews.module.base.ui.BaseListFragment;
 import com.zjk.fireflynews.module.video.presenter.VideoListPresenter;
 import com.zjk.fireflynews.module.video.presenter.VideoListPresenterImpl;
 import com.zjk.fireflynews.module.video.view.VideoListView;
+import com.zjk.fireflynews.utils.UiUtil;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by FireFly on 2016/9/30 14:49.
@@ -52,5 +55,12 @@ public class VideoListFragment extends BaseListFragment<VideoListPresenter,Video
     @Override
     public RecyclerView.LayoutManager getLayoutManager() {
         return layoutManager;
+    }
+
+    @Override
+    public void setListener(List<VideoListData> list, int position) {
+        Bundle bundle = new Bundle();
+        bundle.putSerializable(C.EXTRA_URL_KEY,list.get(position));
+        UiUtil.startActivity(VideoListFragment.this,PlayVideoActivity.class,bundle);
     }
 }

@@ -10,6 +10,8 @@ buildscript {
     dependencies {
         classpath 'com.android.tools.build:gradle:2.2.0'
         classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.4.1'
+        classpath "com.jfrog.bintray.gradle:gradle-bintray-plugin:1.5"
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
@@ -19,6 +21,23 @@ allprojects {
     repositories {
         jcenter()
     }
+}
+
+ext {
+    compileSdkVersion = 24
+    buildToolsVersion = '24.0.2'
+
+    targetSdkVersion = 24
+    //主程序版本
+    minSdkVersion = 14
+    versionCode = 1
+    versionName = "1.0"
+    //library版本
+    jjdxm_minSdkVersion = 9
+    jjdxm_versionCode = 1
+    jjdxm_versionName = "1.0"
+    jjdxm_v4 = 'com.android.support:support-v4:24.2.1'
+    jjdxm_v7 = 'com.android.support:appcompat-v7:24.2.1'
 }
 
 task clean(type: Delete) {

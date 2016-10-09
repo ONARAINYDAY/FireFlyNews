@@ -12,6 +12,7 @@ import com.zjk.fireflynews.R;
 import com.zjk.fireflynews.base.BaseFragment;
 import com.zjk.fireflynews.base.BaseRecyclerViewAdapter;
 import com.zjk.fireflynews.base.BaseSpaceItemDecoration;
+import com.zjk.fireflynews.callback.OnItemClickListener;
 import com.zjk.fireflynews.callback.OnLoadMoreListener;
 import com.zjk.fireflynews.data.newenum.InitDataType;
 import com.zjk.fireflynews.module.base.presenter.BaseListPresenter;
@@ -93,8 +94,20 @@ public abstract class BaseListFragment<T extends BaseListPresenter, V> extends B
      */
     public abstract RecyclerView.LayoutManager getLayoutManager();
 
+    public void setListener(List<V> list,int position){
+
+    }
+
     private void initNewsList() {
         adapter = getAdapter();
+
+        adapter.setOnItemClickListener(new OnItemClickListener() {
+            @Override
+            public void onClick(View view, int position) {
+                BaseRecyclerViewAdapter adapter = (BaseRecyclerViewAdapter) mRecyclerView.getAdapter();
+                setListener(adapter.getAdapterData(),position);
+            }
+        });
 
         adapter.setOnLoadMoreListener(new OnLoadMoreListener() {
             @Override

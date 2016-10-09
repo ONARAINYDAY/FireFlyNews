@@ -29,7 +29,6 @@ public class VideoListAdapter extends BaseRecyclerViewAdapter<VideoListData> {
         super(context, data, mLayoutManager);
     }
 
-
     @Override
     public int bindItemViewLayout(int viewType) {
         return R.layout.video_list_item_layout;

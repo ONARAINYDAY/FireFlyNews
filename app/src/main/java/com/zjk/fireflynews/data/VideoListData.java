@@ -1,9 +1,12 @@
 package com.zjk.fireflynews.data;
 
+import java.io.Serializable;
+
 /**
  * Created by FireFly on 2016/10/8 20:46.
  */
-public class VideoListData {
+public class VideoListData implements Serializable{
+    public static final long serialVersionUID = 10000L;
     /**
      * 自己加的记录测出来的宽高
      */
