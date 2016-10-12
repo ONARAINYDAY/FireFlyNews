@@ -56,7 +56,7 @@ public class NewsDetailFragment extends BaseListFragment<NewsDetailPresenter,New
 
     @Override
     public BaseRecyclerViewAdapter<NewsListData> getAdapter() {
-        return new NewsListAdapter(getActivity(), new ArrayList<NewsListData>());
+        return new NewsListAdapter(getActivity(), null);
     }
 
     @Override

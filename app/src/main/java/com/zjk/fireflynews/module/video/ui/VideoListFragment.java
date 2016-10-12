@@ -49,7 +49,7 @@ public class VideoListFragment extends BaseListFragment<VideoListPresenter,Video
 
     @Override
     public BaseRecyclerViewAdapter<VideoListData> getAdapter() {
-        return new VideoListAdapter(getActivity(),new ArrayList<VideoListData>(),layoutManager);
+        return new VideoListAdapter(getActivity(),null,layoutManager);
     }
 
     @Override

@@ -39,10 +39,11 @@ public abstract class BaseRecyclerViewAdapter<T> extends RecyclerView.Adapter<Ba
     private OnLoadMoreListener mOnLoadMoreListener;
 
     public BaseRecyclerViewAdapter(Context context, List<T> data) {
-        mContext = context;
-        mData = data == null ? new ArrayList<T>() : data;
-        mInflater = LayoutInflater.from(context);
-        mLayoutManager = new LinearLayoutManager(mContext);
+//        mContext = context;
+//        mData = data == null ? new ArrayList<T>() : data;
+//        mInflater = LayoutInflater.from(context);
+//        mLayoutManager = new LinearLayoutManager(mContext);
+        this(context, data, new LinearLayoutManager(context));
     }
 
     public BaseRecyclerViewAdapter(Context context, List<T> data, RecyclerView.LayoutManager mLayoutManager) {
