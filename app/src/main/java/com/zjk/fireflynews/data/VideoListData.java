@@ -5,8 +5,8 @@ import java.io.Serializable;
 /**
  * Created by FireFly on 2016/10/8 20:46.
  */
-public class VideoListData implements Serializable{
-    public static final long serialVersionUID = 10000L;
+public class VideoListData implements Serializable {
+    private static final long serialVersionUID = 10000L;
     /**
      * 自己加的记录测出来的宽高
      */
@@ -250,7 +250,8 @@ public class VideoListData implements Serializable{
         this.topicName = topicName;
     }
 
-    public static class VideoTopicBean {
+    public static class VideoTopicBean implements Serializable {
+        private static final long serialVersionUID = 10001L;
         private String alias;
         private String tname;
         private String ename;

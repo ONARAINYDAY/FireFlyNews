@@ -1,4 +1,4 @@
-package com.zjk.fireflynews.data.newenum;
+package com.zjk.fireflynews.newenum;
 
 import android.support.annotation.IntDef;
 

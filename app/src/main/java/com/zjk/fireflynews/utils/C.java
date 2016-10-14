@@ -1,4 +1,4 @@
-package com.zjk.fireflynews.data;
+package com.zjk.fireflynews.utils;
 
 /**
  * Created by FireFly on 2016/10/9 10:45.

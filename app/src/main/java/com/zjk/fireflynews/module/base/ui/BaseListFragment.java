@@ -14,7 +14,7 @@ import com.zjk.fireflynews.base.BaseRecyclerViewAdapter;
 import com.zjk.fireflynews.base.BaseSpaceItemDecoration;
 import com.zjk.fireflynews.callback.OnItemClickListener;
 import com.zjk.fireflynews.callback.OnLoadMoreListener;
-import com.zjk.fireflynews.data.newenum.InitDataType;
+import com.zjk.fireflynews.newenum.InitDataType;
 import com.zjk.fireflynews.module.base.presenter.BaseListPresenter;
 import com.zjk.fireflynews.module.base.view.BaseListView;
 import com.zjk.fireflynews.utils.MeasureUtil;

@@ -10,7 +10,7 @@ import com.dou361.ijkplayer.widget.PlayStateParams;
 import com.dou361.ijkplayer.widget.PlayerView;
 import com.zjk.fireflynews.R;
 import com.zjk.fireflynews.base.BaseActivity;
-import com.zjk.fireflynews.data.C;
+import com.zjk.fireflynews.utils.C;
 import com.zjk.fireflynews.data.VideoListData;
 
 

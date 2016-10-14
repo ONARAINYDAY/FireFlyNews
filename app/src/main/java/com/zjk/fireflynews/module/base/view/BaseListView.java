@@ -1,6 +1,6 @@
 package com.zjk.fireflynews.module.base.view;
 
-import com.zjk.fireflynews.data.newenum.InitDataType;
+import com.zjk.fireflynews.newenum.InitDataType;
 
 import java.util.List;
 

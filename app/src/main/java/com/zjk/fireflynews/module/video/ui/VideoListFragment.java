@@ -6,7 +6,7 @@ import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.View;
 
 import com.zjk.fireflynews.base.BaseRecyclerViewAdapter;
-import com.zjk.fireflynews.data.C;
+import com.zjk.fireflynews.utils.C;
 import com.zjk.fireflynews.data.NewsData;
 import com.zjk.fireflynews.data.VideoListData;
 import com.zjk.fireflynews.module.adapter.VideoListAdapter;
@@ -16,7 +16,6 @@ import com.zjk.fireflynews.module.video.presenter.VideoListPresenterImpl;
 import com.zjk.fireflynews.module.video.view.VideoListView;
 import com.zjk.fireflynews.utils.UiUtil;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
