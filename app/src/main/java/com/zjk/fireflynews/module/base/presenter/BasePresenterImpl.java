@@ -13,7 +13,7 @@ public abstract class BasePresenterImpl<T extends BaseView, V> implements BasePr
     protected Subscription mSubscription;
     protected T mView;
 
-    public BasePresenterImpl(T mView){
+    public BasePresenterImpl(T mView) {
         this.mView = mView;
     }
 
@@ -24,8 +24,9 @@ public abstract class BasePresenterImpl<T extends BaseView, V> implements BasePr
 
     @Override
     public void onDestory() {
-        if(null!=mSubscription&&!mSubscription.isUnsubscribed()){
+        if (null != mSubscription && !mSubscription.isUnsubscribed()) {
             mSubscription.unsubscribe();
+            mSubscription = null;
         }
         mView = null;
     }

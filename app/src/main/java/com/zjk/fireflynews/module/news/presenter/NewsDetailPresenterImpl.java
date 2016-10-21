@@ -34,6 +34,7 @@ public class NewsDetailPresenterImpl extends BaseListPresenterImpl<NewsDetailVie
 
     @Override
     public void onRefreshData() {
+        unsubscribe();
         isRefresh = true;
         mStartPage = 0;
         mSubscription = newsDetailInteractor.asyncData(this, newsData, mStartPage);
@@ -41,6 +42,7 @@ public class NewsDetailPresenterImpl extends BaseListPresenterImpl<NewsDetailVie
 
     @Override
     public void loadMoreData() {
+        unsubscribe();
         isRefresh = false;
         mSubscription = newsDetailInteractor.asyncData(this, newsData, mStartPage);
     }

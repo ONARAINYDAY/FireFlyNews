@@ -30,8 +30,16 @@ public abstract class BaseListPresenterImpl<T extends BaseListView, V extends Li
         if (data != null || !data.isEmpty()) {
             mStartPage += getDataNum();
         }
-        mView.updateRecycleView(data, "", isRefresh ? InitDataType.TYPE_REFRESH_SUCCESS : InitDataType.TYPE_LOAD_MORE_SUCCESS);
+        if (mView != null)
+            mView.updateRecycleView(data, "", isRefresh ? InitDataType.TYPE_REFRESH_SUCCESS : InitDataType.TYPE_LOAD_MORE_SUCCESS);
     }
 
     protected abstract int getDataNum();
+
+    protected void unsubscribe() {
+        if (mSubscription != null && !mSubscription.isUnsubscribed()) {
+            mSubscription.unsubscribe();
+            mSubscription = null;
+        }
+    }
 }

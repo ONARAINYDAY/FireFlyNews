@@ -44,6 +44,7 @@ public abstract class BaseListFragment<T extends BaseListPresenter, V> extends B
         mSwipeRefreshLayout.setOnRefreshListener(this);
         mSwipeRefreshLayout.setColorSchemeResources(android.R.color.holo_blue_bright, android.R.color.holo_green_light,
                 android.R.color.holo_orange_light, android.R.color.holo_red_light);
+        mSwipeRefreshLayout.setRefreshing(true);
         initView(view);
         return view;
     }
@@ -94,7 +95,7 @@ public abstract class BaseListFragment<T extends BaseListPresenter, V> extends B
      */
     public abstract RecyclerView.LayoutManager getLayoutManager();
 
-    public void setListener(List<V> list,int position){
+    public void setListener(List<V> list, int position) {
 
     }
 
@@ -105,7 +106,7 @@ public abstract class BaseListFragment<T extends BaseListPresenter, V> extends B
             @Override
             public void onClick(View view, int position) {
                 BaseRecyclerViewAdapter adapter = (BaseRecyclerViewAdapter) mRecyclerView.getAdapter();
-                setListener(adapter.getAdapterData(),position);
+                setListener(adapter.getAdapterData(), position);
             }
         });
 

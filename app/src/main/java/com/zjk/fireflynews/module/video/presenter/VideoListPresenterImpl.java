@@ -33,6 +33,7 @@ public class VideoListPresenterImpl extends BaseListPresenterImpl<VideoListView,
 
     @Override
     public void onRefreshData() {
+        unsubscribe();
         isRefresh = true;
         mStartPage = 0;
         mSubscription = mVideoListInteractor.asyncData(this, newsData, mStartPage);
@@ -40,6 +41,7 @@ public class VideoListPresenterImpl extends BaseListPresenterImpl<VideoListView,
 
     @Override
     public void loadMoreData() {
+        unsubscribe();
         isRefresh = false;
         mSubscription = mVideoListInteractor.asyncData(this, newsData, mStartPage);
     }
