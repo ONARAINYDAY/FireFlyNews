@@ -10,6 +10,7 @@ import android.view.View;
 
 import com.zjk.fireflynews.base.BaseActivity;
 import com.zjk.fireflynews.module.main.presenter.MainPresenter;
+import com.zjk.fireflynews.module.main.presenter.MainPresenterImpl;
 import com.zjk.fireflynews.module.main.view.MainView;
 import com.zjk.fireflynews.module.news.ui.NewsFragment;
 import com.zjk.fireflynews.module.photo.ui.PhotoFragment;
@@ -30,6 +31,14 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainVie
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        mPresenter = new MainPresenterImpl(this);
+        mPresenter.initView();
+
+    }
+
+    @Override
+    public void initMainView() {
         getWindow().setBackgroundDrawable(null);
         ViewUtil.quitFullScreen(this);
         naviMapFragment.clear();
@@ -97,4 +106,5 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainVie
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         return exitAppHelper.onKeyDown(keyCode, event) || super.onKeyDown(keyCode, event);
     }
+
 }

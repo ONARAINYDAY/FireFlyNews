@@ -18,4 +18,10 @@ public class MainPresenterImpl extends BasePresenterImpl<MainView, List<NewsData
     @Override
     public void requestSuccess(List<NewsData> data) {
     }
+
+    @Override
+    public void initView() {
+        if (mView != null)
+            mView.initMainView();
+    }
 }

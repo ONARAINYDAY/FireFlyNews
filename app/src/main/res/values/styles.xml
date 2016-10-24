@@ -29,5 +29,5 @@
         <item name="android:gravity">center</item>
         <item name="android:textSize">@dimen/txt_size_small</item>
     </style>
-    
+
 </resources>

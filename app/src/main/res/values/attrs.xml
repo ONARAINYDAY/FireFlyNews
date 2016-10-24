@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- 设置背景色，取消遮罩变黑的问题 -->
-    <attr name="backgroundColor" format="reference|color"/>
+    <attr name="backgroundColor" format="reference|color" />
 </resources>
