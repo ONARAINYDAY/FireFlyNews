@@ -17,19 +17,16 @@
         <TextView
             android:id="@+id/firefly_news"
             style="@style/main_tab_style"
-            android:drawableTop="@mipmap/ic_news_black"
             android:text="@string/str_news" />
 
         <TextView
             android:id="@+id/firefly_photo"
             style="@style/main_tab_style"
-            android:drawableTop="@mipmap/ic_photo_black"
             android:text="@string/str_photo" />
 
         <TextView
             android:id="@+id/firefly_video"
             style="@style/main_tab_style"
-            android:drawableTop="@mipmap/ic_video_black"
             android:text="@string/str_video" />
     </LinearLayout>
 
@@ -37,6 +34,7 @@
         android:id="@+id/main_line"
         android:layout_width="match_parent"
         android:layout_height="1dp"
+        android:background="@color/color_gray"
         android:layout_above="@id/main_navigation_container" />
 
     <FrameLayout

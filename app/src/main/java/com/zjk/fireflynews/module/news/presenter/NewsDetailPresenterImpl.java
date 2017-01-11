@@ -15,16 +15,16 @@ import java.util.List;
 
 public class NewsDetailPresenterImpl extends BaseListPresenterImpl<NewsDetailView, List<NewsListData>> implements NewsDetailPresenter {
 
-    private NewsData newsData;
-    private NewsDetailInteractor newsDetailInteractor;
+//    private NewsData newsData;
+//    private NewsDetailInteractor newsDetailInteractor;
 
     public NewsDetailPresenterImpl(NewsDetailView mView, NewsData newsData) {
-        super(mView);
-        if (newsData == null) {
-            throw new NullPointerException("newsData is null");
-        }
-        this.newsData = newsData;
-        newsDetailInteractor = new NewsDetailInteractorImpl();
+        super(mView,newsData);
+//        if (newsData == null) {
+//            throw new NullPointerException("newsData is null");
+//        }
+//        this.newsData = newsData;
+        mCommonListInteractor = new NewsDetailInteractorImpl();
     }
 
     @Override
@@ -32,18 +32,18 @@ public class NewsDetailPresenterImpl extends BaseListPresenterImpl<NewsDetailVie
         return 20;
     }
 
-    @Override
-    public void onRefreshData() {
-        unsubscribe();
-        isRefresh = true;
-        mStartPage = 0;
-        mSubscription = newsDetailInteractor.asyncData(this, newsData, mStartPage);
-    }
-
-    @Override
-    public void loadMoreData() {
-        unsubscribe();
-        isRefresh = false;
-        mSubscription = newsDetailInteractor.asyncData(this, newsData, mStartPage);
-    }
+//    @Override
+//    public void onRefreshData() {
+//        unsubscribe();
+//        isRefresh = true;
+//        mStartPage = 0;
+//        mSubscription = newsDetailInteractor.asyncData(this, newsData, mStartPage);
+//    }
+//
+//    @Override
+//    public void loadMoreData() {
+//        unsubscribe();
+//        isRefresh = false;
+//        mSubscription = newsDetailInteractor.asyncData(this, newsData, mStartPage);
+//    }
 }

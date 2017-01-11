@@ -6,4 +6,6 @@
     <color name="colorAccent">#ff8f00</color>
 
     <color name="backgroundColor">#E1E6EB</color>
+
+    <color name="color_gray">#999999</color>
 </resources>

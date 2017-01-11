@@ -14,16 +14,13 @@ import java.util.List;
  */
 public class VideoListPresenterImpl extends BaseListPresenterImpl<VideoListView, List<VideoListData>> implements VideoListPresenter {
 
-    private NewsData newsData;
-    private VideoListInteractor mVideoListInteractor;
+//    private NewsData newsData;
+//    private VideoListInteractor mVideoListInteractor;
 
     public VideoListPresenterImpl(VideoListView mView, NewsData newsData) {
-        super(mView);
-        if (newsData == null) {
-            throw new NullPointerException("video NewsData is null");
-        }
-        this.newsData = newsData;
-        mVideoListInteractor = new VideoListInteractorImpl();
+        super(mView, newsData);
+//        this.newsData = newsData;
+        mCommonListInteractor = new VideoListInteractorImpl();
     }
 
     @Override
@@ -31,18 +28,4 @@ public class VideoListPresenterImpl extends BaseListPresenterImpl<VideoListView,
         return 10;
     }
 
-    @Override
-    public void onRefreshData() {
-        unsubscribe();
-        isRefresh = true;
-        mStartPage = 0;
-        mSubscription = mVideoListInteractor.asyncData(this, newsData, mStartPage);
-    }
-
-    @Override
-    public void loadMoreData() {
-        unsubscribe();
-        isRefresh = false;
-        mSubscription = mVideoListInteractor.asyncData(this, newsData, mStartPage);
-    }
 }

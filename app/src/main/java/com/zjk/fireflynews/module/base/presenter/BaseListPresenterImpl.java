@@ -1,5 +1,8 @@
 package com.zjk.fireflynews.module.base.presenter;
 
+import com.zjk.fireflynews.data.NewsData;
+import com.zjk.fireflynews.data.NewsListData;
+import com.zjk.fireflynews.module.video.model.VideoListInteractor;
 import com.zjk.fireflynews.newenum.InitDataType;
 import com.zjk.fireflynews.module.base.view.BaseListView;
 
@@ -12,9 +15,15 @@ public abstract class BaseListPresenterImpl<T extends BaseListView, V extends Li
 
     protected boolean isRefresh;
     protected int mStartPage;
+    protected BaseListInteractor mCommonListInteractor;
+    protected NewsData newsData;
 
-    public BaseListPresenterImpl(T mView) {
+    public BaseListPresenterImpl(T mView, NewsData newsData) {
         super(mView);
+        if (newsData == null) {
+            throw new NullPointerException("video NewsData is null");
+        }
+        this.newsData = newsData;
     }
 
     @Override
@@ -41,5 +50,20 @@ public abstract class BaseListPresenterImpl<T extends BaseListView, V extends Li
             mSubscription.unsubscribe();
             mSubscription = null;
         }
+    }
+
+    @Override
+    public void onRefreshData() {
+        unsubscribe();
+        isRefresh = true;
+        mStartPage = 0;
+        mSubscription = mCommonListInteractor.asyncData(this, newsData, mStartPage);
+    }
+
+    @Override
+    public void loadMoreData() {
+        unsubscribe();
+        isRefresh = false;
+        mSubscription = mCommonListInteractor.asyncData(this, newsData, mStartPage);
     }
 }

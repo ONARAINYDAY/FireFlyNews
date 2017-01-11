@@ -14,7 +14,7 @@ public class NewsPresenterImpl extends BasePresenterImpl<NewsView, List<NewsData
 
     public NewsPresenterImpl(NewsView mView) {
         super(mView);
-        new NewsInteractorImpl().asyncData(this);
+        mSubscription = new NewsInteractorImpl().asyncData(this);
     }
 
     @Override
