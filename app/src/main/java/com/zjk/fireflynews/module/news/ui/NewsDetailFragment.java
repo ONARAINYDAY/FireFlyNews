@@ -56,7 +56,7 @@ public class NewsDetailFragment extends BaseListFragment<NewsDetailPresenter, Ne
 
     @Override
     public void setListener(List<NewsListData> list, int position) {
-        super.setListener(list, position);
+        if (list == null || list.isEmpty()) return;
         NewsListData listData = list.get(position);
         NewsDetailActivity.startNewsDetailInfo(getActivity(), listData.getPostid(), listData.getImgsrc());
     }

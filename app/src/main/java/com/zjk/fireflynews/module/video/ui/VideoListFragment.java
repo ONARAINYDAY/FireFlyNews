@@ -59,7 +59,7 @@ public class VideoListFragment extends BaseListFragment<VideoListPresenter, Vide
 
     @Override
     public void setListener(List<VideoListData> list, int position) {
-        super.setListener(list, position);
+        if (list == null || list.isEmpty()) return;
         Bundle bundle = new Bundle();
         bundle.putSerializable(C.EXTRA_URL_KEY, list.get(position));
         UiUtil.startActivity(VideoListFragment.this, PlayVideoActivity.class, bundle);
