@@ -96,7 +96,7 @@ public abstract class BaseListFragment<T extends BaseListPresenter, V> extends B
     public abstract RecyclerView.LayoutManager getLayoutManager();
 
     public void setListener(List<V> list, int position) {
-
+        if (list == null || list.isEmpty()) return;//data empty, click error
     }
 
     private void initNewsList() {

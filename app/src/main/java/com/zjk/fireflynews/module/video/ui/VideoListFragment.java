@@ -21,10 +21,11 @@ import java.util.List;
 /**
  * Created by FireFly on 2016/9/30 14:49.
  */
-public class VideoListFragment extends BaseListFragment<VideoListPresenter,VideoListData> implements VideoListView {
+public class VideoListFragment extends BaseListFragment<VideoListPresenter, VideoListData> implements VideoListView {
     public static final String EXTRA_VIDEO_LIST_KEY = "extra_video_list_key";
     private NewsData newsData;
     private RecyclerView.LayoutManager layoutManager;
+
     public static VideoListFragment newInstance(NewsData newsData) {
         Bundle args = new Bundle();
         args.putParcelable(EXTRA_VIDEO_LIST_KEY, newsData);
@@ -42,13 +43,13 @@ public class VideoListFragment extends BaseListFragment<VideoListPresenter,Video
     @Override
     public void initView(View view) {
         layoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
-        mPresenter = new VideoListPresenterImpl(this,newsData);
+        mPresenter = new VideoListPresenterImpl(this, newsData);
         mPresenter.onRefreshData();
     }
 
     @Override
     public BaseRecyclerViewAdapter<VideoListData> getAdapter() {
-        return new VideoListAdapter(getActivity(),null,layoutManager);
+        return new VideoListAdapter(getActivity(), null, layoutManager);
     }
 
     @Override
@@ -58,8 +59,9 @@ public class VideoListFragment extends BaseListFragment<VideoListPresenter,Video
 
     @Override
     public void setListener(List<VideoListData> list, int position) {
+        super.setListener(list, position);
         Bundle bundle = new Bundle();
-        bundle.putSerializable(C.EXTRA_URL_KEY,list.get(position));
-        UiUtil.startActivity(VideoListFragment.this,PlayVideoActivity.class,bundle);
+        bundle.putSerializable(C.EXTRA_URL_KEY, list.get(position));
+        UiUtil.startActivity(VideoListFragment.this, PlayVideoActivity.class, bundle);
     }
 }

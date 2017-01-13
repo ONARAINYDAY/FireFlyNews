@@ -5,8 +5,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v7.widget.Toolbar;
+import android.text.Html;
 import android.text.TextUtils;
-import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -66,6 +66,7 @@ public class NewsDetailActivity extends BaseActivity<NewsDetPresenter> implement
     public void initUi(NewsDetailData newsDetailData) {
         title.setText(newsDetailData.getTitle());
         from.setText(getString(R.string.str_news_detail_from, newsDetailData.getSource(), newsDetailData.getPtime()));
-        RichText.from(newsDetailData.getBody()).into(body);
+        body.setText(Html.fromHtml(newsDetailData.getBody()));
     }
+
 }
