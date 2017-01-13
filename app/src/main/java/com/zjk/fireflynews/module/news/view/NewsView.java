@@ -1,7 +1,7 @@
 package com.zjk.fireflynews.module.news.view;
 
 import com.zjk.fireflynews.module.base.view.BaseView;
-import com.zjk.fireflynews.data.NewsData;
+import com.zjk.fireflynews.data.news.NewsData;
 
 import java.util.List;
 

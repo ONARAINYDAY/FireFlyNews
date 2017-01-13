@@ -1,4 +1,4 @@
-package com.zjk.fireflynews.data;
+package com.zjk.fireflynews.data.news;
 
 import android.os.Parcel;
 import android.os.Parcelable;

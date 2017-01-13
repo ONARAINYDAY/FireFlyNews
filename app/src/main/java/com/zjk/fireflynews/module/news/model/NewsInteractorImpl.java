@@ -3,7 +3,7 @@ package com.zjk.fireflynews.module.news.model;
 import com.zjk.fireflynews.R;
 import com.zjk.fireflynews.app.App;
 import com.zjk.fireflynews.callback.RequestCallback;
-import com.zjk.fireflynews.data.NewsData;
+import com.zjk.fireflynews.data.news.NewsData;
 import com.zjk.fireflynews.http.ResultSubscriber;
 
 import java.util.ArrayList;

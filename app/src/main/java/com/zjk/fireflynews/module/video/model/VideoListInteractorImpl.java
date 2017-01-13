@@ -1,10 +1,8 @@
 package com.zjk.fireflynews.module.video.model;
 
 import com.zjk.fireflynews.callback.RequestCallback;
-import com.zjk.fireflynews.data.NewsData;
-import com.zjk.fireflynews.data.NewsListData;
+import com.zjk.fireflynews.data.news.NewsData;
 import com.zjk.fireflynews.data.VideoListData;
-import com.zjk.fireflynews.http.RestApi.Api;
 import com.zjk.fireflynews.http.RestApi.HostType;
 import com.zjk.fireflynews.http.ResultSubscriber;
 import com.zjk.fireflynews.http.manager.RetrofitManager;

@@ -1,27 +1,16 @@
 package com.zjk.fireflynews.module.news.ui;
 
-import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
-import android.support.v4.view.ViewPager;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import com.zjk.fireflynews.R;
-import com.zjk.fireflynews.base.BaseFragment;
+
 import com.zjk.fireflynews.base.BaseTabFragment;
 import com.zjk.fireflynews.base.BaseTabPagerAdapter;
-import com.zjk.fireflynews.data.NewsData;
+import com.zjk.fireflynews.data.news.NewsData;
 import com.zjk.fireflynews.module.news.presenter.NewsPresenter;
 import com.zjk.fireflynews.module.news.presenter.NewsPresenterImpl;
 import com.zjk.fireflynews.module.news.view.NewsView;
 import java.util.ArrayList;
 import java.util.List;
-
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.Unbinder;
 
 /**
  * Created by FireFly on 2016/9/8.

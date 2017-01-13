@@ -4,7 +4,8 @@ import android.support.annotation.NonNull;
 import android.util.SparseArray;
 
 import com.zjk.fireflynews.app.App;
-import com.zjk.fireflynews.data.NewsListData;
+import com.zjk.fireflynews.data.news.NewsDetailData;
+import com.zjk.fireflynews.data.news.NewsListData;
 import com.zjk.fireflynews.data.VideoListData;
 import com.zjk.fireflynews.http.RestApi.Api;
 import com.zjk.fireflynews.http.RestApi.HostType;
@@ -182,6 +183,16 @@ public class RetrofitManager {
      */
     public Observable<Map<String, List<NewsListData>>> getNewsListObservable(String type, String id, int startPage) {
         return mRequestApi.getNewList(getCacheControl(), type, id, startPage).compose(new SchedulerTransformer<Map<String, List<NewsListData>>>());
+    }
+
+    /**
+     * 网易新闻详情：例子：http://c.m.163.com/nc/article/BG6CGA9M00264N2N/full.html
+     *
+     * @param postId 新闻详情的id
+     * @return 被观察对象
+     */
+    public Observable<Map<String, NewsDetailData>> getNewsDetail(String postId) {
+        return mRequestApi.getNewsDetail(postId).compose(new SchedulerTransformer<Map<String, NewsDetailData>>());
     }
 
     /**

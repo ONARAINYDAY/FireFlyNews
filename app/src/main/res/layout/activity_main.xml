@@ -34,14 +34,14 @@
         android:id="@+id/main_line"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@color/color_gray"
-        android:layout_above="@id/main_navigation_container" />
+        android:layout_above="@id/main_navigation_container"
+        android:background="@color/color_gray" />
 
     <FrameLayout
         android:id="@+id/fragments_frame_container"
-        android:background="?attr/backgroundColor"
-        android:layout_above="@id/main_line"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_above="@id/main_line"
+        android:background="?attr/backgroundColor" />
 
 </RelativeLayout>

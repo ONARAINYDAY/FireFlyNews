@@ -1,6 +1,6 @@
 package com.zjk.fireflynews.module.video.presenter;
 
-import com.zjk.fireflynews.data.NewsData;
+import com.zjk.fireflynews.data.news.NewsData;
 import com.zjk.fireflynews.module.base.presenter.BasePresenterImpl;
 import com.zjk.fireflynews.module.video.model.VideoInteractorImpl;
 import com.zjk.fireflynews.module.video.view.VideoView;

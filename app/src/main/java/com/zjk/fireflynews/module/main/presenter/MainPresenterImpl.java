@@ -1,7 +1,7 @@
 package com.zjk.fireflynews.module.main.presenter;
 
 import com.zjk.fireflynews.module.base.presenter.BasePresenterImpl;
-import com.zjk.fireflynews.data.NewsData;
+import com.zjk.fireflynews.data.news.NewsData;
 import com.zjk.fireflynews.module.main.view.MainView;
 
 import java.util.List;

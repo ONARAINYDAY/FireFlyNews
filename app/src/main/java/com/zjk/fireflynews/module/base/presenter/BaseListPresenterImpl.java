@@ -1,8 +1,6 @@
 package com.zjk.fireflynews.module.base.presenter;
 
-import com.zjk.fireflynews.data.NewsData;
-import com.zjk.fireflynews.data.NewsListData;
-import com.zjk.fireflynews.module.video.model.VideoListInteractor;
+import com.zjk.fireflynews.data.news.NewsData;
 import com.zjk.fireflynews.newenum.InitDataType;
 import com.zjk.fireflynews.module.base.view.BaseListView;
 

@@ -1,6 +1,7 @@
 package com.zjk.fireflynews.http.RestApi;
 
-import com.zjk.fireflynews.data.NewsListData;
+import com.zjk.fireflynews.data.news.NewsDetailData;
+import com.zjk.fireflynews.data.news.NewsListData;
 import com.zjk.fireflynews.data.VideoListData;
 
 import java.util.List;
@@ -25,10 +26,19 @@ public interface RequestApi {
      * @return 被观察对象
      */
     @GET("nc/article/{type}/{id}/{startPage}-20.html")
-    Observable<Map<String,List<NewsListData>>> getNewList(
-            @Header("Cache-Control")String cacheControl,
+    Observable<Map<String, List<NewsListData>>> getNewList(
+            @Header("Cache-Control") String cacheControl,
             @Path("type") String type, @Path("id") String id,
             @Path("startPage") int startPage);
+
+    /**
+     * 新闻详情：例子：http://c.m.163.com/nc/article/BFNFMVO800034JAU/full.html
+     *
+     * @param postId 新闻详情的id
+     * @return 被观察对象
+     */
+    @GET("nc/article/{postId}/full.html")
+    Observable<Map<String, NewsDetailData>> getNewsDetail(@Path("postId") String postId);
 
     /**
      * 网易视频列表 例子：http://c.m.163.com/nc/video/list/V9LG4B3A0/n/0-10.html
@@ -39,5 +49,6 @@ public interface RequestApi {
      */
     @GET("nc/video/list/{id}/n/{startPage}-10.html")
     Observable<Map<String, List<VideoListData>>> getVideoList(
-            @Header("Cache-Control") String cacheControl,@Path("id") String id, @Path("startPage") int startPage);
+            @Header("Cache-Control") String cacheControl, @Path("id") String id, @Path("startPage") int startPage);
+
 }

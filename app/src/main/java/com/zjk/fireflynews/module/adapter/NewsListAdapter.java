@@ -7,7 +7,7 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.zjk.fireflynews.R;
 import com.zjk.fireflynews.base.BaseRecyclerViewAdapter;
 import com.zjk.fireflynews.base.BaseRecyclerViewHolder;
-import com.zjk.fireflynews.data.NewsListData;
+import com.zjk.fireflynews.data.news.NewsListData;
 
 import java.util.List;
 
@@ -29,8 +29,8 @@ public class NewsListAdapter extends BaseRecyclerViewAdapter<NewsListData> {
     public void bindItemViewData(BaseRecyclerViewHolder holder, int position, NewsListData itemData) {
         Glide.with(mContext).load(itemData.getImgsrc()).asBitmap().diskCacheStrategy(DiskCacheStrategy.RESULT)
                 .placeholder(R.drawable.ic_loading).error(R.drawable.ic_fail).into(holder.getImageView(R.id.iv_news_summary_photo));
-        holder.setText(R.id.tv_news_summary_title,itemData.getTitle());
-        holder.setText(R.id.tv_news_summary_digest,itemData.getDigest());
-        holder.setText(R.id.tv_news_summary_ptime,itemData.getPtime());
+        holder.setText(R.id.tv_news_summary_title, itemData.getTitle());
+        holder.setText(R.id.tv_news_summary_digest, itemData.getDigest());
+        holder.setText(R.id.tv_news_summary_ptime, itemData.getPtime());
     }
 }

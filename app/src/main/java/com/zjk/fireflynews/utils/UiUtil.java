@@ -24,7 +24,9 @@ public class UiUtil {
     public static void startActivity(Object obj, Class<?> traget, Bundle bundle) {
         Context context = getContext(obj);
         Intent intent = new Intent(context, traget);
-        intent.putExtras(bundle);
+        if (bundle != null) {
+            intent.putExtras(bundle);
+        }
         context.startActivity(intent);
     }
 }

@@ -1,7 +1,7 @@
 package com.zjk.fireflynews.module.news.view;
 
 import com.zjk.fireflynews.module.base.view.BaseListView;
-import com.zjk.fireflynews.data.NewsListData;
+import com.zjk.fireflynews.data.news.NewsListData;
 
 /**
  * Created by FireFly on 2016/9/8.

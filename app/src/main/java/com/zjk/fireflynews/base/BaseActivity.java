@@ -25,11 +25,6 @@ public class BaseActivity<T extends BasePresenter> extends AppCompatActivity imp
 
     protected T mPresenter;
     private Unbinder unbinder;
-    @Override
-    public void onCreate(Bundle savedInstanceState, PersistableBundle persistentState) {
-        super.onCreate(savedInstanceState, persistentState);
-
-    }
 
     @Override
     public void setContentView(@LayoutRes int layoutResID) {

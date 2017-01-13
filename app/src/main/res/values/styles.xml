@@ -1,9 +1,10 @@
 <resources>
 
     <!-- Base application theme. -->
+    <style name="Base.Theme.Material" parent="AppTheme"></style>
+
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="android:windowNoTitle">true</item>
         <!--这是App的主要颜色，用于工具栏背景-->
         <item name="colorPrimary">@color/colorPrimary</item>
         <!--这是App深色调的基本颜色，主要用于通知栏背景-->
@@ -28,8 +29,17 @@
         <item name="android:textColor">@drawable/main_tab_txtcol</item>
         <item name="android:paddingBottom">@dimen/border_space_half</item>
         <item name="android:paddingTop">@dimen/border_space_half</item>
+        <item name="android:paddingLeft">@dimen/border_space</item>
+        <item name="android:paddingRight">@dimen/border_space</item>
         <item name="android:gravity">center</item>
         <item name="android:textSize">@dimen/txt_size_small</item>
     </style>
 
+    <style name="Widget.CardContent" parent="android:Widget">
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingRight">16dp</item>
+        <item name="android:paddingTop">24dp</item>
+        <item name="android:paddingBottom">24dp</item>
+        <item name="android:orientation">vertical</item>
+    </style>
 </resources>
