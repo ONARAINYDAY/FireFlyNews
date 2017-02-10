@@ -4,9 +4,10 @@ import android.support.annotation.NonNull;
 import android.util.SparseArray;
 
 import com.zjk.fireflynews.app.App;
+import com.zjk.fireflynews.data.gank.GankData;
 import com.zjk.fireflynews.data.news.NewsDetailData;
 import com.zjk.fireflynews.data.news.NewsListData;
-import com.zjk.fireflynews.data.VideoListData;
+import com.zjk.fireflynews.data.video.VideoListData;
 import com.zjk.fireflynews.http.RestApi.Api;
 import com.zjk.fireflynews.http.RestApi.HostType;
 import com.zjk.fireflynews.http.RestApi.RequestApi;
@@ -204,6 +205,10 @@ public class RetrofitManager {
      */
     public Observable<Map<String, List<VideoListData>>> getVideoListObservable(String id, int startPage) {
         return mRequestApi.getVideoList(getCacheControl(), id, startPage).compose(new SchedulerTransformer<Map<String, List<VideoListData>>>());
+    }
+
+    public Observable<GankData> getGankData(int year, int month, int day) {
+        return mRequestApi.getGankData(getCacheControl(), year, month, day).compose(new SchedulerTransformer<GankData>());
     }
 
 }

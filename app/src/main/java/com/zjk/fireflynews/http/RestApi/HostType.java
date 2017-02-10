@@ -10,9 +10,11 @@ import java.lang.annotation.RetentionPolicy;
  */
 
 public class HostType {
-    @IntDef({FIREFLY_VIDEO_HOST,FIREFLY_PHOTO_HOST,FIREFLY_NEWS_HOST})
+    @IntDef({FIREFLY_VIDEO_HOST, FIREFLY_PHOTO_HOST, FIREFLY_NEWS_HOST, GANK_DAY_HOST})
     @Retention(RetentionPolicy.SOURCE)
-    public @interface HostTypeChecker{}
+    public @interface HostTypeChecker {
+    }
+
     /**
      * 多少种Host类型
      */
@@ -35,4 +37,10 @@ public class HostType {
      */
     @HostTypeChecker
     public static final int FIREFLY_NEWS_HOST = 3;
+
+    /**
+     * gank数据
+     */
+    @HostType.HostTypeChecker
+    public static final int GANK_DAY_HOST = 4;
 }

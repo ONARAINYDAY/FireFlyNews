@@ -12,7 +12,7 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.zjk.fireflynews.R;
 import com.zjk.fireflynews.base.BaseRecyclerViewAdapter;
 import com.zjk.fireflynews.base.BaseRecyclerViewHolder;
-import com.zjk.fireflynews.data.VideoListData;
+import com.zjk.fireflynews.data.video.VideoListData;
 import com.zjk.fireflynews.utils.MeasureUtil;
 
 import java.util.List;
@@ -32,6 +32,11 @@ public class VideoListAdapter extends BaseRecyclerViewAdapter<VideoListData> {
     @Override
     public int bindItemViewLayout(int viewType) {
         return R.layout.video_list_item_layout;
+    }
+
+    @Override
+    public int getEveryItemViewType(int position) {
+        return TYPE_DEFAULT;
     }
 
     @Override

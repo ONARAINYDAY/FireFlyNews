@@ -1,14 +1,16 @@
 package com.zjk.fireflynews.http.RestApi;
 
+import com.zjk.fireflynews.data.gank.GankData;
 import com.zjk.fireflynews.data.news.NewsDetailData;
 import com.zjk.fireflynews.data.news.NewsListData;
-import com.zjk.fireflynews.data.VideoListData;
+import com.zjk.fireflynews.data.video.VideoListData;
 
 import java.util.List;
 import java.util.Map;
 
 import retrofit2.http.GET;
 import retrofit2.http.Header;
+import retrofit2.http.Headers;
 import retrofit2.http.Path;
 import rx.Observable;
 
@@ -51,4 +53,8 @@ public interface RequestApi {
     Observable<Map<String, List<VideoListData>>> getVideoList(
             @Header("Cache-Control") String cacheControl, @Path("id") String id, @Path("startPage") int startPage);
 
+
+    @GET("day/{year}/{month}/{day}")
+    Observable<GankData> getGankData(@Header("Cache-Control") String cacheControl,
+                                     @Path("year") int year, @Path("month") int month, @Path("day") int day);
 }

@@ -42,18 +42,20 @@ public class Api {
     }
 
     public static final String FIREFLY_NEWS_HOST = "https://c.m.163.com/";
+    public static final String GANK_DAY = "http://gank.io/api/";
 
     /**
      * 获取对应的host
      */
-    public static String getHost(int hostType){
-        switch (hostType){
+    public static String getHost(int hostType) {
+        switch (hostType) {
             case HostType.FIREFLY_NEWS_HOST:
                 return FIREFLY_NEWS_HOST;
+            case HostType.GANK_DAY_HOST:
+                return GANK_DAY;
             default:
-                break;
+                return "";
         }
-        return "";
     }
 
 }

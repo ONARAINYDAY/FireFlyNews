@@ -13,10 +13,9 @@ import com.zjk.fireflynews.module.main.presenter.MainPresenter;
 import com.zjk.fireflynews.module.main.presenter.MainPresenterImpl;
 import com.zjk.fireflynews.module.main.view.MainView;
 import com.zjk.fireflynews.module.news.ui.NewsFragment;
-import com.zjk.fireflynews.module.photo.ui.PhotoFragment;
+import com.zjk.fireflynews.module.gank.ui.GankFragment;
 import com.zjk.fireflynews.module.video.ui.VideoFragment;
 import com.zjk.fireflynews.utils.ExitAppHelper;
-import com.zjk.fireflynews.utils.LogUtil;
 import com.zjk.fireflynews.utils.ViewUtil;
 
 import butterknife.OnClick;
@@ -44,8 +43,8 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainVie
         naviMapFragment.clear();
 
         addFragment(new NewsFragment(), R.id.firefly_news);
-        addFragment(new PhotoFragment(), R.id.firefly_photo);
         addFragment(new VideoFragment(), R.id.firefly_video);
+        addFragment(new GankFragment(), R.id.firefly_photo);
 
         replaceFragment(getSupportFragmentManager(), R.id.firefly_news);
 

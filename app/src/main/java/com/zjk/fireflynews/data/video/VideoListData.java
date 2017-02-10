@@ -1,4 +1,4 @@
-package com.zjk.fireflynews.data;
+package com.zjk.fireflynews.data.video;
 
 import java.io.Serializable;
 

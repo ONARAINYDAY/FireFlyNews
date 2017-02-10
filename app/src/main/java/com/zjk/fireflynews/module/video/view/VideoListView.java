@@ -1,6 +1,6 @@
 package com.zjk.fireflynews.module.video.view;
 
-import com.zjk.fireflynews.data.VideoListData;
+import com.zjk.fireflynews.data.video.VideoListData;
 import com.zjk.fireflynews.module.base.view.BaseListView;
 
 /**

@@ -11,7 +11,7 @@ import com.dou361.ijkplayer.widget.PlayerView;
 import com.zjk.fireflynews.R;
 import com.zjk.fireflynews.base.BaseActivity;
 import com.zjk.fireflynews.utils.C;
-import com.zjk.fireflynews.data.VideoListData;
+import com.zjk.fireflynews.data.video.VideoListData;
 
 
 public class PlayVideoActivity extends BaseActivity {

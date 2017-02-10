@@ -5,4 +5,7 @@ package com.zjk.fireflynews.utils;
  */
 public interface C {
     String EXTRA_URL_KEY = "extra_url_key";
+    int TYPE_GIRL = 200;
+    int TYPE_TITLE = TYPE_GIRL + 1;
+    int TYPE_DESC = TYPE_TITLE + 1;
 }

@@ -8,7 +8,7 @@ import android.view.View;
 import com.zjk.fireflynews.base.BaseRecyclerViewAdapter;
 import com.zjk.fireflynews.utils.C;
 import com.zjk.fireflynews.data.news.NewsData;
-import com.zjk.fireflynews.data.VideoListData;
+import com.zjk.fireflynews.data.video.VideoListData;
 import com.zjk.fireflynews.module.adapter.VideoListAdapter;
 import com.zjk.fireflynews.module.base.ui.BaseListFragment;
 import com.zjk.fireflynews.module.video.presenter.VideoListPresenter;

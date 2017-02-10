@@ -78,7 +78,7 @@ public abstract class BaseRecyclerViewAdapter<T> extends RecyclerView.Adapter<Ba
         } else if (viewType == TYPE_LOAD_MORE_SUCCESS) {
             holder = new BaseRecyclerViewHolder(mContext, mInflater.inflate(R.layout.footer_load_more, parent, false));
         } else {
-            holder = new BaseRecyclerViewHolder(mContext, mInflater.inflate(bindItemViewLayout(0), parent, false));
+            holder = new BaseRecyclerViewHolder(mContext, mInflater.inflate(bindItemViewLayout(viewType), parent, false));
         }
 
         holder.setOnItemClickListener(onItemClickListener);
@@ -153,6 +153,8 @@ public abstract class BaseRecyclerViewAdapter<T> extends RecyclerView.Adapter<Ba
      */
     public abstract int bindItemViewLayout(int viewType);
 
+    public abstract int getEveryItemViewType(int position);
+
     /**
      * 加载每一个item的数据
      */
@@ -182,7 +184,8 @@ public abstract class BaseRecyclerViewAdapter<T> extends RecyclerView.Adapter<Ba
         } else if (mOnLoadMoreListener != null && !mLoadMoreEnable && !isShowFooter && getItemCount() - 1 == position) {
             return TYPE_LOAD_MORE_FAIL;
         }
-        return TYPE_DEFAULT;
+//        return TYPE_DEFAULT;
+        return getEveryItemViewType(position);
     }
 
     /**

@@ -1,6 +1,9 @@
 apply plugin: 'com.android.application'
 apply plugin: 'android-apt'
 
+Properties prop = new Properties()
+prop.load(new FileInputStream(file("../signingConfigs.properties")))
+
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
@@ -12,10 +15,19 @@ android {
         versionCode 1
         versionName "1.0"
     }
+    signingConfigs {
+        release {
+            storeFile file(prop['KEYSTORE_FILEPATH'])
+            storePassword prop['STORE_PASSWORD']
+            keyAlias prop['KEY_ALIAS']
+            keyPassword prop['KEY_PASSWORD']
+        }
+    }
     buildTypes {
         release {
             minifyEnabled true
             shrinkResources true
+            signingConfig signingConfigs.release // apk签名
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
@@ -28,10 +40,10 @@ android {
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     //
-    compile 'com.android.support:support-v4:25.1.0'
-    compile 'com.android.support:appcompat-v7:25.1.0'
-    compile 'com.android.support:design:25.1.0'
-    compile 'com.android.support:cardview-v7:25.1.0'
+    compile 'com.android.support:support-v4:25.1.1'
+    compile 'com.android.support:appcompat-v7:25.1.1'
+    compile 'com.android.support:design:25.1.1'
+    compile 'com.android.support:cardview-v7:25.1.1'
     //
     apt 'com.jakewharton:butterknife-compiler:8.4.0'
     compile 'com.jakewharton:butterknife:8.4.0'
@@ -46,9 +58,10 @@ dependencies {
 //    compile 'com.squareup.okhttp3:logging-interceptor:3.4.1'
     compile 'io.reactivex:rxandroid:1.2.1'
     compile 'io.reactivex:rxjava:1.2.1'
-    //
     compile 'com.github.bumptech.glide:glide:3.7.0'
-    compile project(':jjdxm-ijkplayer')
-
     compile 'com.zzhoujay.richtext:richtext:2.3.7'
+
+    compile 'com.github.chrisbanes:PhotoView:1.3.1'
+    //
+    compile project(':jjdxm-ijkplayer')
 }

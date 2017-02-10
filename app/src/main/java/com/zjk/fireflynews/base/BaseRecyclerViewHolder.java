@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.util.SparseArray;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.zjk.fireflynews.callback.OnItemClickListener;
@@ -13,7 +14,7 @@ import com.zjk.fireflynews.callback.OnItemClickListener;
  * Created by FireFly on 2016/9/28 10:47.
  */
 
-public class BaseRecyclerViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+public class BaseRecyclerViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
     //集合类，layout里包含的View,以view的id作为key，value是view对象
     protected SparseArray<View> mViews;
@@ -36,15 +37,22 @@ public class BaseRecyclerViewHolder extends RecyclerView.ViewHolder implements V
         }
         return (T) view;
     }
-    public ImageView getImageView(int viewId){
+
+    public ImageView getImageView(int viewId) {
         return findViewById(viewId);
     }
 
-    public TextView getTextView(int viewId){
+    public TextView getTextView(int viewId) {
         return findViewById(viewId);
     }
 
-    /****以下为辅助方法*****/
+    public <V extends View> V getView(int viewId) {
+        return (V) findViewById(viewId);
+    }
+
+    /****
+     * 以下为辅助方法
+     *****/
 
     public BaseRecyclerViewHolder setText(int viewId, String text) {
         TextView tv = findViewById(viewId);
@@ -54,8 +62,8 @@ public class BaseRecyclerViewHolder extends RecyclerView.ViewHolder implements V
 
     @Override
     public void onClick(View v) {
-        if(null!=onItemClickListener){
-            onItemClickListener.onClick(v,getAdapterPosition());
+        if (null != onItemClickListener) {
+            onItemClickListener.onClick(v, getAdapterPosition());
         }
     }
 

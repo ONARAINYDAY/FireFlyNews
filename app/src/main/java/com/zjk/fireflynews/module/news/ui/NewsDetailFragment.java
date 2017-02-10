@@ -3,6 +3,7 @@ package com.zjk.fireflynews.module.news.ui;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.TextUtils;
 import android.view.View;
 
 import com.zjk.fireflynews.base.BaseRecyclerViewAdapter;
@@ -58,6 +59,10 @@ public class NewsDetailFragment extends BaseListFragment<NewsDetailPresenter, Ne
     public void setListener(List<NewsListData> list, int position) {
         if (list == null || list.isEmpty()) return;
         NewsListData listData = list.get(position);
-        NewsDetailActivity.startNewsDetailInfo(getActivity(), listData.getPostid(), listData.getImgsrc());
+        if (!TextUtils.isEmpty(listData.getPostid())) {
+            NewsDetailActivity.startNewsDetailInfo(getActivity(), listData.getPostid(), listData.getImgsrc());
+        } else {
+            showSnackbar("敬请期待");
+        }
     }
 }

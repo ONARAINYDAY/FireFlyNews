@@ -97,6 +97,9 @@ public abstract class BaseListFragment<T extends BaseListPresenter, V> extends B
 
     public void setListener(List<V> list, int position) {
     }
+    public void setListener(View v,List<V> list,int position){
+
+    }
 
     private void initNewsList() {
         adapter = getAdapter();
@@ -106,6 +109,7 @@ public abstract class BaseListFragment<T extends BaseListPresenter, V> extends B
             public void onClick(View view, int position) {
                 BaseRecyclerViewAdapter adapter = (BaseRecyclerViewAdapter) mRecyclerView.getAdapter();
                 setListener(adapter.getAdapterData(), position);
+                setListener(view,adapter.getAdapterData(), position);
             }
         });
 

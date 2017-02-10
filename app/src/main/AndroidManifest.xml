@@ -36,6 +36,14 @@
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="landscape"
             android:theme="@style/AppTheme.LauncherAppTheme" />
+        <activity
+            android:name=".WebViewActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".PhotoViewActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/PhotoViewTheme" />
     </application>
 
 </manifest>
