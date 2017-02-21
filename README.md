@@ -1,5 +1,4 @@
 # FireFlyNews
-android dev study 
 
 ---
 
